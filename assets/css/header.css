@@ -1,0 +1,5 @@
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  height: 10rem;
+  background-image: linear-gradient(black, brown); }

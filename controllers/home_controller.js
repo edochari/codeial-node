@@ -5,3 +5,4 @@ module.exports.home=function(req,res){
         title:'Home'
     })
 }
+
