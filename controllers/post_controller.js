@@ -1,10 +1,15 @@
 const Post = require('../models/post')
 
 
-module.exports.Post = function(req,res){
-     Post.create(req.body);
-    console.log(req.body.content);
-    return res.render('home',{
-        title:'Home'
-    })
+module.exports.create = function(req,res){
+     Post.create({
+        content:req.body.content,
+        user:req.user._id,
+     }).then((post)=>{
+        
+        return res.redirect('back');
+     })
+     .catch((err)=>{console.log("error in creating post"); });
+    
 }
+

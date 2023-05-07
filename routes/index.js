@@ -4,8 +4,9 @@ const postController = require('../controllers/post_controller');
 const router = express.Router();
 
 router.get('/',homeController.home);
-router.post('/post',postController.Post);
+
 router.use('/users',require('./users'));
+router.use('/posts',require('./posts'));
 
 console.log("router loaded");
 
