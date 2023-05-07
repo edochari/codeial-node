@@ -1,6 +1,23 @@
-.nav-links{
+//name of the app
+#main-heading{
+   color:whitesmoke;
+   width:80%;
+
+}
+#nav-links{
     list-style-type: none;
     display:flex;
-    height:10rem;
-    background-image:linear-gradient(black,brown);
+    height:6rem;
+    margin:0;
+    background-image:linear-gradient(black,lightgreen);
+    div{
+        margin-top:2rem;
+        margin-left: 1.5rem;
+        a{
+            color: whitesmoke;
+            
+            font-size: larger;
+        }
+    }
+    
 }
