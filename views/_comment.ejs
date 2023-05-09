@@ -1,0 +1,12 @@
+<p>
+    <%= comment.content
+            %>
+            <br>
+            <small>
+                    <%= comment.user.name
+                            %>
+            </small>
+            <small>
+                    <a href="/comments/destroy/<%= comment._id %>">Delete comment</a>
+            </small>
+</p>

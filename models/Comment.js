@@ -7,16 +7,16 @@ const commentSchema = new mongoose.Schema({
     },
     user:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'user',
+        ref:'User',
     },
     post:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'post',
+        ref:'Post',
     }
 },{
     timestamps:true,
 });
 
-const Comments = mongoose.model("Comments",commentSchema);
+const Comments = mongoose.model("Comment",commentSchema);
 
 module.exports = Comments;

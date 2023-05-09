@@ -10,10 +10,10 @@ const postSchema = new mongoose.Schema({
         ref:'User',
     },
     //include array of comments associated to faster access of particular post
-    comments:{
+    comments:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'comment',
-    }
+        ref:'Comment',
+    }]
 
 },{
     timestamps:true
