@@ -1,15 +1,15 @@
 const Post = require('../models/post')
 const Comment = require('../models/Comment');
 
-module.exports.create = function(req,res){
-     Post.create({
+module.exports.create = async function(req,res){
+   try{
+   let post =await Post.create({
         content:req.body.content,
         user:req.user._id,
-     }).then((post)=>{
-        
-        return res.redirect('back');
      })
-     .catch((err)=>{console.log("error in creating post"); });
+        
+      return res.redirect('back');
+   }catch(err){onsole.log("error in creating post ",err); };
     
 }
 
