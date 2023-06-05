@@ -18,7 +18,7 @@ module.exports.create = async function(req,res){
      }
         
       return res.redirect('back');
-   }catch(err){onsole.log("error in creating post ",err); };
+   }catch(err){console.log("error in creating post ",err); };
     
 }
 
