@@ -2,3 +2,20 @@ body{
     background-color: orange;
     
 }
+#feed-posts{
+        
+    width:70%;
+    padding:10px;
+}
+
+#user-friends{
+    
+    width:30%;
+    padding:10px;
+    height:100%;
+    border-left: 1px solid lightgrey;
+
+    #friends-list{
+        list-style-type: none;
+    }
+}

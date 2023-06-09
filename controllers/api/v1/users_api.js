@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 module.exports.createSession = async function(req,res){
     try{
         let user = await User.findOne({email:req.body.email});
-        console.log('User',req.body.email);
+        console.log('User is waste',user);
         if(!user || user.password != req.body.password){
             console.log(req.body.password +" "+user.password);
             return res.json(422,{
@@ -16,7 +16,7 @@ module.exports.createSession = async function(req,res){
         return res.json({
             message:'sign in successful here is your token',
             data:{
-                token:jwt.sign(user.toJSON(),'codeial',{expiresIn:10000})
+                token:jwt.sign(user.toJSON(),'codeial',{expiresIn:100000})
             }
         })
     }catch(err){
@@ -27,4 +27,3 @@ module.exports.createSession = async function(req,res){
     }
 }
 
-module.exports=createSession;

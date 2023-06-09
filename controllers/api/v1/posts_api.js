@@ -33,7 +33,9 @@ module.exports.destroy = function(req,res){
              .then(()=>res.redirect('back'))
  
        }else{
-          return res.redirect('back');
+          return res.json(401,{
+            message:'You cannot delete the post'
+          })
        }
     })
  }
