@@ -20,7 +20,7 @@
       #home-container .home-content .home-left-container #mingle-quote {
         color: whitesmoke; }
     #home-container .home-content .sign-in-container {
-      width: 45%;
+      width: 50%;
       height: 20rem;
       border-radius: 5%;
       background-color: aliceblue;
@@ -29,30 +29,32 @@
       align-items: center; }
       #home-container .home-content .sign-in-container .sign-in-form {
         width: 100%; }
-        #home-container .home-content .sign-in-container .sign-in-form .form-element {
-          border: 1px solid gray;
-          border-radius: 7%;
-          height: 1.8rem;
-          width: 16rem;
-          margin-left: 1rem;
-          margin-top: 2rem; }
-          #home-container .home-content .sign-in-container .sign-in-form .form-element .form-input-field {
-            border: 0;
-            margin: 0.3rem; }
+        #home-container .home-content .sign-in-container .sign-in-form .form-input-field {
+          padding: 0.5rem 1rem;
+          margin-top: 2rem;
+          margin-left: 0.5rem;
+          width: 95%;
+          box-sizing: border-box;
+          border-radius: 5%;
+          border: 1px solid gray; }
         #home-container .home-content .sign-in-container .sign-in-form .sign-in-button {
           padding: 0.6rem;
           width: 90%;
-          background-color: burlywood;
+          background-color: #4CAF50;
           border-radius: 5%;
           border: 0;
           color: white;
           margin: 1rem;
-          margin-top: 2rem; }
+          margin-top: 2rem;
+          cursor: pointer; }
       #home-container .home-content .sign-in-container .sign-up-button {
+        text-align: center;
+        text-decoration: none;
         margin-top: 1rem;
-        background-color: burlywood;
+        background-color: #4CAF50;
         color: white;
         padding: 0.6rem;
         width: 90%;
         border: 0;
-        border-radius: 5%; }
+        border-radius: 5%;
+        cursor: pointer; }

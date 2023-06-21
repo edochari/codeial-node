@@ -8,22 +8,22 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         
         <link rel="stylesheet" href="/css/layout.css">
-      
         <link rel="stylesheet" href="/css/footer.css">
         <%- style %>
     </head>
     <body>
-        <!-- <%- include('_header'); %> -->
+        <%- include('_header'); %>
         
         <main id="layout-main">
             <%- body %>
         </main>
+        <%- script %> 
         <!-- <% if(flash.success && flash.success.length>0){ %>
             <p><%= flash.success %></p>
         <%}%> -->
         <!-- <%- include('_footer'); %>
-        <%- script %> -->
-        <script>
+       
+        <!-- <script>
             
             <% if(flash.success && flash.success.length>0){ %>
                 new Noty({
@@ -34,6 +34,6 @@
                   layout:'topRight'
                 }).show();
             <%}%>
-        </script>
+        </script> -->
     </body>
 </html>

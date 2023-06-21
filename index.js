@@ -7,7 +7,8 @@ const cookieParser = require('cookie-parser');
 // use of passport and cookies
 const passport = require('passport');
 const passportLocal = require("./config/passport-local-strategy");
-const passportJWT = require('./config/passport-jwt-strategy');
+// const passportJWT = require('./config/passport-jwt-strategy');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const sassMiddleware = require('node-sass-middleware');
@@ -22,9 +23,10 @@ app.use(sassMiddleware({
     prefix:'/css'
 }));
 
-app.use(express.urlencoded());
 
+app.use(express.urlencoded());
 app.use(cookieParser());
+
 
 app.use(express.static('./assets'));
 //use express layouts
@@ -39,6 +41,8 @@ app.set('layout extractScripts',true);
 //setting the view engine and path
 app.set('view engine','ejs');
 app.set('views','./views');
+
+
 
 //creating session 
 //mongo store is used to store the session cookie in db
@@ -80,3 +84,5 @@ app.listen(port,function(err){
     }
     console.log(`server is up and running on port : ${port}`);
 })
+
+

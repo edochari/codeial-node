@@ -1,7 +1,21 @@
-<form action="/users/create" method="POST">
-    <input type="text" name="name"placeholder="Enter Name" required>
-    <input type="email" name="email"placeholder="Enter Email" required>
-    <input type="password" name="password" placeholder="Enter Password" required>
-    <input type="password" name="confirm_password" placeholder="Confirm password" required>
-    <input type="submit" value="sign Up">
-</form>
+<link rel="stylesheet" href="/css/sign_up.css">
+<div class="sign-up-container">
+    <form action="/users/create" method="POST">
+        
+            <input class="form-input-field" type="email" size="35" name="email" placeholder="Enter Email" required>
+        
+            <input class="form-input-field" type="text" size="35" name="name" placeholder="Enter Name" required>
+        
+            <input class="form-input-field" type="password" size="35" name="password" placeholder="Enter Password" required>
+    
+        <input class="form-input-field" type="password" size="35" name="confirm_password" placeholder="Confirm Password" required>
+    
+        
+    <button class="sign-up-button" type="submit" value="Sign-up">Sign Up</button>
+    </form>
+</div>
+
+
+
+  
+

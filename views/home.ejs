@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/css/home.css">
+
 <div id="home-container">
         <div class="home-content">
                 <div class="home-left-container">
@@ -8,7 +9,7 @@
         
                 <div class="sign-in-container">
                         <div class="sign-in-form">
-                              <form action="/users/create-session" method="POST">
+                              <form action="/users/create-session/" method="POST">
                                 <div class="form-element">
                                         <input class="form-input-field" type="email" size="35" name="email" placeholder="Enter Email" required>
                                 </div>
@@ -20,7 +21,8 @@
                                         <button class="sign-in-button" type="submit" value="sign In">Log In</button>
                                 </form>
                         </div>
-                        <button class="sign-up-button" value="sign-up">Create an account</button>
+                        <a href="/users/sign-up" class="sign-up-button" value="sign-up">Create an account</button>
+                                <a href="/users/auth/google/">google</a>
         
                 </div>
         </div>

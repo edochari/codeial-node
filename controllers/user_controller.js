@@ -1,14 +1,33 @@
 const User = require('../models/user');
+const Post = require('../models/post')
 
-module.exports.profile = function (req, res) {
-    User.findById(req.params.id).then((user)=>{
-        return res.render('user', {
-            title: 'profile',
-            profile_user:user,
+
+module.exports.profile=async function(req,res){
+    // console.log("cookie",req.cookies);
+    // res.cookie('user_id',78);
+    try{
+        let posts = await Post.find({})
+        .sort('-createdAt')
+        .populate('user')
+        .populate({
+            path:'comments',
+            populate:{
+                path:'user',
+            }
         })
-    })
-   
+        let users = await  User.find({})
+        
+        return res.render('user',{
+            title:'user',
+            posts:posts,
+            all_users:users,
+        }) 
+    }catch(err){
+        console.log('Error',err);
+        return ;
+    }
 }
+
 
 module.exports.update = async function(req,res){
     if(req.user.id == req.params.id){
@@ -50,18 +69,19 @@ module.exports.signUp = function (req, res) {
 }
 
 module.exports.signIn = function (req, res) {
-    console.log(req.body);
+    console.log("user is",req.params);
     if(req.isAuthenticated())
     {
         return res.redirect('/users/profile');
     }
-    return res.render('user_sign_in', {
+    return res.render('home', {
         title: 'codeial | sign in'
     });
 }
 
 // get the sign up data
 module.exports.create = function (req, res) {
+    console.log("signing up");
     if (req.body.password !== req.body.confirm_password) {
         return res.redirect('back');
     }
@@ -90,7 +110,7 @@ module.exports.createSession = function (req, res) {
    
     req.flash('success','Logged in successfully');
     console.log(req.flash);
-   return res.redirect('/');
+   return res.redirect('/users/profile');
 }
 
 module.exports.destroySession = function (req, res) {
