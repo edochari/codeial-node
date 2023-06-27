@@ -1,11 +1,22 @@
 body{
-    background-color: orange;
+    background-color: #171515;
     
+}
+#user-profile-container{
+    display:flex;
+
+}
+#profile-information-container{
+    border-right:1px solid white;
+    color:whitesmoke;
+    width:20%;
+
 }
 #feed-posts{
         
-    width:70%;
+    width:50%;
     padding:10px;
+    color:whitesmoke;
 }
 
 #user-friends{
@@ -14,8 +25,12 @@ body{
     padding:10px;
     height:100%;
     border-left: 1px solid lightgrey;
+    text-decoration: none;
+    
 
     #friends-list{
         list-style-type: none;
+        color:whitesmoke;
+        text-decoration: none;
     }
 }

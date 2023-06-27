@@ -51,7 +51,7 @@ passport.checkAuthentication = function(req,res,next){
 
 passport.setAuthenticatedUser = function(req,res,next){
     //req.user is authenticated user we are sending it to locals views
-    console.log("authenticated user",req.user);
+    console.log("set authenticated user",req.user);
     if(req.isAuthenticated())
     {
         res.locals.user=req.user;

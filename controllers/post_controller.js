@@ -33,6 +33,15 @@ module.exports.destroy = function(req,res){
                console.log("req",req.user.id+" "+post.user)
                console.log("post is deleted successfully")
             })
+            if(req.xhr){
+               return res.status(200).json({
+                  data:{
+                     post_id:req.params.id
+                  },message : 'post deleted successfully'
+
+               }
+               )
+            }
             Comment.deleteMany({post:req.params.id})
             .then(()=>res.redirect('back'))
 

@@ -68,16 +68,16 @@ module.exports.signUp = function (req, res) {
     });
 }
 
-module.exports.signIn = function (req, res) {
-    console.log("user is",req.params);
-    if(req.isAuthenticated())
-    {
-        return res.redirect('/users/profile');
-    }
-    return res.render('home', {
-        title: 'codeial | sign in'
-    });
-}
+// module.exports.signIn = function (req, res) {
+//     console.log("user is",req.params);
+//     if(req.isAuthenticated())
+//     {
+//         return res.redirect('/users/profile');
+//     }
+//     return res.render('home', {
+//         title: 'codeial | sign in'
+//     });
+// }
 
 // get the sign up data
 module.exports.create = function (req, res) {
@@ -90,7 +90,7 @@ module.exports.create = function (req, res) {
         if (!user) {
             User.create(req.body).then((user) => {
                 console.log("User successfully created");
-                return res.redirect('/users/sign-in');
+                return res.redirect('/');
             }).catch((err) => {
                 console.log("Error while creating user");
             })
@@ -117,7 +117,7 @@ module.exports.destroySession = function (req, res) {
    req.logout(function(err) {
     if (err) { console.log("Error while logging out")}
     req.flash('success','you have logged out');
-    res.redirect('/users/sign-in');
+    res.redirect('/');
   });
   
 }
